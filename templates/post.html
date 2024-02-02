@@ -1,0 +1,13 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+Обьявление
+{% endblock title %}
+
+
+{% block content %}
+<h1>Заголовок: {{ heading.heading }}</h1>
+<h3>Автор: {{ heading.autor }}</h3>
+<h5>Дата публикации: {{ heading.time_creates|date:'d M Y' }}</h5>
+<h5>{{ heading.article_text }}</h5>
+{% endblock content %}
