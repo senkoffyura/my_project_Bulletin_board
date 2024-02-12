@@ -6,8 +6,15 @@
 
 
 {% block content %}
+
+<form method="POST" action="">{% csrf_token %}
+    {{ form }}
+</form>
+
+{{ form.media }}
+
 <h1>Заголовок: {{ heading.heading }}</h1>
 <h3>Автор: {{ heading.autor }}</h3>
 <h5>Дата публикации: {{ heading.time_creates|date:'d M Y' }}</h5>
-<h5>{{ heading.article_text }}</h5>
+<h5>{{ heading.content_field }}</h5>
 {% endblock content %}

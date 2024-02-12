@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from markdownx.models import MarkdownxField
 
 class Author(models.Model):
     # rating = models.IntegerField(default=0)
@@ -38,7 +38,7 @@ class Post(models.Model):
     choice_content = models.CharField(max_length=2, choices=CHOICE_CONTENS, default= tank)
     heading = models.CharField(max_length=64)
     rating = models.IntegerField(default=0)
-    article_text = models.TextField()
+    content_field = MarkdownxField()
     autor = models.ForeignKey(Author, on_delete=models.CASCADE)
     # category = models.ManyToManyField(Category, through='PostCategory')
 
